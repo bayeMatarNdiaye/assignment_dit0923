@@ -1,3 +1,4 @@
+#EL HADJI MATAR NDIAYE
 import os
 import subprocess
 
@@ -24,23 +25,23 @@ def create_arborescence(arborescence, chemin_repo):
         arborescence (dict): Une structure d'arborescence spécifiée comme un dictionnaire.
         chemin_repo (str): Le chemin local du dépôt Git.
     """
-    # Fonction récursive pour parcourir l'arborescence
+    
     def parcourir_arborescence(arbo, chemin_actuel):
         for element, contenu in arbo.items():
             chemin_element = os.path.join(chemin_actuel, element)
 
-            if isinstance(contenu, dict):  # Si c'est un dossier
+            if isinstance(contenu, dict): 
                 os.makedirs(chemin_element, exist_ok=True)
                 parcourir_arborescence(contenu, chemin_element)
-            elif contenu:  # Si c'est un fichier avec du contenu
+            elif contenu:  
                 os.makedirs(os.path.dirname(chemin_element), exist_ok=True)
                 with open(chemin_element, "w") as fichier:
                     fichier.write(contenu)
 
-    # Créer l'arborescence locale
+    # Création arborescence locale
     parcourir_arborescence(arborescence, chemin_repo)
 
-# Structure d'arborescence
+#arborescence
 arborescence_a_creer = {
     "data": {
         "cleaned": {},
@@ -55,7 +56,13 @@ arborescence_a_creer = {
     "notebooks": {
         "main.ipynb": "mycode"
     },
-    "README.md": "Ce programme Python a pour objectif de créer une structure d'arborescence de fichiers et de dossiers spécifique dans un dépôt Git",
+    "README.md": """Ce programme Python a pour objectif de créer une structure d'arborescence de fichiers et de dossiers spécifique dans un dépôt Git\nPour exécuter l'application, suivez ces étapes :
+1. [Étape 1 : Prérequis, par exemple, installer Python 3.7+]
+2. [Étape 2 : Cloner le dépôt Git : `git clone https://github.com/votre-utilisateur/mon-projet.git`]
+3. [Étape 3 : Naviguer vers le répertoire du projet : `cd mon-projet`]
+4. [Étape 4 : Installer les dépendances : `pip install -r requirements.txt`]
+5. [Étape 5 : Lancer l'application : `python main.py`]
+""",
     "reports": {},
     "requirements.txt": "os\nsubprocess",
     "src": {
@@ -65,8 +72,7 @@ arborescence_a_creer = {
     }
 }
 
-chemin_repo_git = r"C:\Users\baaymatar\Desktop\COURS\assignment_dit0923"  # Remplacez par le chemin de votre dépôt local
-
+chemin_repo_git = r"C:\Users\baaymatar\Desktop\COURS\assignment_dit0923"
 subprocess.run(["git", "init"], cwd=chemin_repo_git, check=True)
 
 create_arborescence(arborescence_a_creer, chemin_repo_git)
