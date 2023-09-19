@@ -73,5 +73,3 @@ create_arborescence(arborescence_a_creer, chemin_repo_git)
 
 git_commit("Création de l'arborescence", chemin_repo_git)
 
-with open("contenu_readme.txt", "r") as readme_content_file:
-    contenu_readme = readme_content_file.read()
