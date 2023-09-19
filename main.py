@@ -56,7 +56,7 @@ if __name__ == '__main__' :
         "Makefile": "",
         "models": {},
         "notebooks": {
-            "main.ipynb": """my code"""
+            "main.ipynb": 'my code python'
         },
         "README.md": """Ce programme Python a pour objectif de créer une structure d'arborescence de fichiers et de dossiers spécifique dans un dépôt Git\nPour exécuter l'application, suivez ces étapes :
     1. [Étape 1 : Prérequis, par exemple, installer Python 3.7+]
