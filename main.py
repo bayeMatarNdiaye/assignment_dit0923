@@ -31,13 +31,11 @@ def create_arborescence(arborescence, chemin_repo):
 
             if isinstance(contenu, dict):  # Si c'est un dossier
                 os.makedirs(chemin_element, exist_ok=True)
-                git_commit(f"ajout de {element}", chemin_repo)  # Commit pour le dossier créé
                 parcourir_arborescence(contenu, chemin_element)
             elif contenu:  # Si c'est un fichier avec du contenu
                 os.makedirs(os.path.dirname(chemin_element), exist_ok=True)
                 with open(chemin_element, "w") as fichier:
                     fichier.write(contenu)
-                git_commit(f"ajout de {element}", chemin_repo)  # Commit pour le fichier créé
 
     # Créer l'arborescence locale
     parcourir_arborescence(arborescence, chemin_repo)
@@ -67,10 +65,14 @@ arborescence_a_creer = {
     }
 }
 
-chemin_repo_git = r"C:\Users\baaymatar\Desktop\COURS\assignment_dit0923"
+# Chemin du dépôt Git local
+chemin_repo_git = r"C:\Users\baaymatar\Desktop\COURS\assignment_dit0923"  # Remplacez par le chemin de votre dépôt local
 
 # Initialisation du dépôt Git
 subprocess.run(["git", "init"], cwd=chemin_repo_git, check=True)
 
-# Appel de la fonction pour créer l'arborescence avec des commits
+# Appel de la fonction pour créer l'arborescence
 create_arborescence(arborescence_a_creer, chemin_repo_git)
+
+# Effectuer un seul commit global pour l'ensemble de l'arborescence
+git_commit("Création de l'arborescence", chemin_repo_git)
