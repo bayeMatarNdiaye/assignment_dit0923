@@ -1,0 +1,9 @@
+contenu_readme = """
+    # Mon Programme Python
+
+    Ce programme Python a pour objectif de créer une structure d'arborescence de fichiers et de dossiers spécifique dans un dépôt Git local. L'arborescence créée suit une organisation précise pour un projet typique de science des données ou de développement de logiciels.
+
+    ...
+
+    *Note*: Assurez-vous d'adapter ce contenu en fonction de votre projet spécifique, en remplaçant "[Votre Nom]" par votre nom réel, par exemple. Vous pouvez également ajouter plus d'informations sur votre projet, ses objectifs et son contexte.
+    """
