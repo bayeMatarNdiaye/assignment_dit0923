@@ -41,41 +41,48 @@ def create_arborescence(arborescence, chemin_repo):
     # Création arborescence locale
     parcourir_arborescence(arborescence, chemin_repo)
 
+
+if __name__ == '__main__' :
 #arborescence
-arborescence_a_creer = {
-    "data": {
-        "cleaned": {},
-        "processed": {},
-        "raw": {}
-        
-    },
-    "docs": {},
-    "LICENCE" : "",
-    "Makefile": "",
-    "models": {},
-    "notebooks": {
-        "main.ipynb": "mycode"
-    },
-    "README.md": """Ce programme Python a pour objectif de créer une structure d'arborescence de fichiers et de dossiers spécifique dans un dépôt Git\nPour exécuter l'application, suivez ces étapes :
-1. [Étape 1 : Prérequis, par exemple, installer Python 3.7+]
-2. [Étape 2 : Cloner le dépôt Git : `git clone https://github.com/votre-utilisateur/mon-projet.git`]
-3. [Étape 3 : Naviguer vers le répertoire du projet : `cd mon-projet`]
-4. [Étape 4 : Installer les dépendances : `pip install -r requirements.txt`]
-5. [Étape 5 : Lancer l'application : `python main.py`]
-""",
-    "reports": {},
-    "requirements.txt": "os\nsubprocess",
-    "src": {
-        "utils.py": "",
-        "process.py": "",
-        "train.py": ""
+    arborescence = {
+        "data": {
+            "cleaned": {},
+            "processed": {},
+            "raw": {}
+            
+        },
+        "docs": {},
+        "LICENCE" : "",
+        "Makefile": "",
+        "models": {},
+        "notebooks": {
+            "main.ipynb": """my code"""
+        },
+        "README.md": """Ce programme Python a pour objectif de créer une structure d'arborescence de fichiers et de dossiers spécifique dans un dépôt Git\nPour exécuter l'application, suivez ces étapes :
+    1. [Étape 1 : Prérequis, par exemple, installer Python 3.7+]
+    2. [Étape 2 : Cloner le dépôt Git : `git clone https://github.com/votre-utilisateur/mon-projet.git`]
+    3. [Étape 3 : Naviguer vers le répertoire du projet : `cd mon-projet`]
+    4. [Étape 4 : Installer les dépendances : `pip install -r requirements.txt`]
+    5. [Étape 5 : Lancer l'application : `python main.py`]
+    """,
+        "reports": {},
+        "requirements.txt": "os\nsubprocess",
+        "src": {
+            "utils.py": "",
+            "process.py": "",
+            "train.py": ""
+        }
     }
-}
 
-chemin_repo_git = r"C:\Users\baaymatar\Desktop\COURS\assignment_dit0923"
-subprocess.run(["git", "init"], cwd=chemin_repo_git, check=True)
+    chemin_repo_git = r"C:\Users\baaymatar\Desktop\COURS\assignment_dit0923"
+    subprocess.run(["git", "init"], cwd=chemin_repo_git, check=True)
 
-create_arborescence(arborescence_a_creer, chemin_repo_git)
+    create_arborescence(arborescence, chemin_repo_git)
 
-git_commit("Création de l'arborescence", chemin_repo_git)
+    git_commit("Création de l'arborescence", chemin_repo_git)
+
+    subprocess.run(["git", "remote", "add", "origin", "https://github.com/bayeMatarNdiaye/assignment_dit0923.git"], cwd=chemin_repo_git, check=True)
+
+    subprocess.run(["git", "push", "-u", "origin", "main"], cwd=chemin_repo_git, check=True)
+
 
