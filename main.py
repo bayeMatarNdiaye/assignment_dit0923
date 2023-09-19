@@ -83,16 +83,6 @@ if __name__ == '__main__' :
 
     subprocess.run(["git", "init"], cwd=chemin_repo_git, check=True)
 
-    # Vérifier si le référentiel distant "origin" existe déjà
-    try:
-        subprocess.run(["git", "remote", "add", "origin", "https://github.com/bayeMatarNdiaye/assignment_dit0923.git"], cwd=chemin_repo_git, check=True)
-    except subprocess.CalledProcessError:
-        # "origin" existe déjà, vous pouvez ignorer cette erreur
-        pass
-
-    # Ajouter tous les fichiers et effectuer un commit initial
-    subprocess.run(["git", "add", "."], cwd=chemin_repo_git, check=True)
-    subprocess.run(["git", "commit", "-m", "Initial commit"], cwd=chemin_repo_git, check=True)
 
 
 
