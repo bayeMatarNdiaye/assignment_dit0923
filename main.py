@@ -43,7 +43,6 @@ def create_arborescence(arborescence, chemin_repo):
     parcourir_arborescence(arborescence, chemin_repo)
 
 
-
 # Structure d'arborescence
 arborescence_a_creer = {
     "data": {
@@ -70,5 +69,7 @@ arborescence_a_creer = {
 }
 
 chemin_repo_git = r"C:\Users\baaymatar\Desktop\COURS\assignment_dit0923"
+
+subprocess.run(["git", "init"], cwd=chemin_repo_git, check=True)
  
 create_arborescence(arborescence_a_creer, chemin_repo_git)
