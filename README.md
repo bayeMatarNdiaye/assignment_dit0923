@@ -1,1 +1,1 @@
-README file
+Ce programme Python a pour objectif de créer une structure d'arborescence de fichiers et de dossiers spécifique dans un dépôt Git

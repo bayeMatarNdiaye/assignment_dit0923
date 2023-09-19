@@ -55,9 +55,9 @@ arborescence_a_creer = {
     "notebooks": {
         "main.ipynb": "mycode"
     },
-    "README.md": "",
+    "README.md": "Ce programme Python a pour objectif de créer une structure d'arborescence de fichiers et de dossiers spécifique dans un dépôt Git",
     "reports": {},
-    "requirements.txt": "",
+    "requirements.txt": "os\nsubprocess",
     "src": {
         "utils.py": "",
         "process.py": "",
@@ -65,14 +65,13 @@ arborescence_a_creer = {
     }
 }
 
-# Chemin du dépôt Git local
 chemin_repo_git = r"C:\Users\baaymatar\Desktop\COURS\assignment_dit0923"  # Remplacez par le chemin de votre dépôt local
 
-# Initialisation du dépôt Git
 subprocess.run(["git", "init"], cwd=chemin_repo_git, check=True)
 
-# Appel de la fonction pour créer l'arborescence
 create_arborescence(arborescence_a_creer, chemin_repo_git)
 
-# Effectuer un seul commit global pour l'ensemble de l'arborescence
 git_commit("Création de l'arborescence", chemin_repo_git)
+
+with open("contenu_readme.txt", "r") as readme_content_file:
+    contenu_readme = readme_content_file.read()
